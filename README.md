@@ -25,22 +25,37 @@
     body {
       font-family: 'Tajawal', system-ui, sans-serif;
       background: #05070d url('cube-bg.jpg') center center / cover no-repeat fixed;
+      background-attachment: fixed;
+
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
       min-height: 100vh;
     }
 
-    /* طبقة تغطية داكنة فوق الخلفية */
+    /* طبقة خفيفة جداً - تسمح للمكعب بالظهور بوضوح */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background: 
-        linear-gradient(90deg, rgba(5,7,13,0.88) 0%, rgba(5,7,13,0.6) 45%, rgba(5,7,13,0.35) 100%),
-        linear-gradient(180deg, rgba(5,7,13,0.45) 0%, rgba(5,7,13,0.7) 60%, rgba(5,7,13,0.92) 100%);
+        radial-gradient(ellipse at 30% 20%, rgba(59,130,246,0.08) 0%, transparent 50%),
+        linear-gradient(90deg, rgba(5,7,13,0.35) 0%, rgba(5,7,13,0.15) 50%, rgba(5,7,13,0.25) 100%),
+        linear-gradient(180deg, rgba(5,7,13,0.15) 0%, rgba(5,7,13,0.2) 100%);
       z-index: 0;
       pointer-events: none;
+    }
+    /* فواصل شفافة تظهر المكعب */
+    .cube-spacer {
+      height: 18vh;
+      min-height: 120px;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .cube-spacer.small {
+      height: 10vh;
+      min-height: 70px;
     }
 
     /* HERO */
@@ -66,9 +81,7 @@
       margin: 0 auto;
     }
 
-    .hani-box {
-      background: rgba(15, 22, 35, 0.92) !important;
-    }
+
 
     .nav {
       position: absolute;
@@ -207,16 +220,17 @@
     }
 
     .hani-box {
-      background: rgba(15,22,35,0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(99,102,241,0.25);
+      background: rgba(15,22,35,0.45);
+      backdrop-filter: blur(20px) saturate(130%);
+      -webkit-backdrop-filter: blur(20px) saturate(130%);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 20px;
-      padding: 1.75rem 2rem;
+      padding: 2rem 2.25rem;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.8rem;
       max-width: 700px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
     }
 
     .hani-icon {
@@ -249,18 +263,26 @@
       font-size: 0.9rem;
     }
 
-    /* SECTIONS */
+    /* SECTIONS - شفافة أكثر مع فراغات كبيرة */
     section {
-      padding: 5rem 0;
+      padding: 7.5rem 0;
       position: relative;
       z-index: 1;
+      margin: 2.5rem 0;
+      border-radius: 32px;
     }
 
     #about, #tools, .cta {
-      background: rgba(5, 7, 13, 0.78);
-      backdrop-filter: blur(10px);
+      background: rgba(5, 7, 13, 0.22);
+      backdrop-filter: blur(24px) saturate(130%);
+      -webkit-backdrop-filter: blur(24px) saturate(130%);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        0 20px 80px rgba(0,0,0,0.2);
     }
-
+    /* فراغات أكبر بين العناصر */
     .container {
       width: min(1100px, 92%);
       margin: 0 auto;
@@ -268,7 +290,7 @@
 
     .section-title {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 4.5rem;
     }
 
     .section-title h2 {
@@ -285,21 +307,25 @@
     .about-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 2.2rem;
     }
 
     .about-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      transition: 0.25s;
+      background: rgba(15, 22, 35, 0.42);
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: 0.35s cubic-bezier(.2,.8,.2,1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
     }
 
     .about-card:hover {
-      border-color: var(--border-light);
-      background: var(--card-hover);
-      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(21, 30, 46, 0.55);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
     }
 
     .about-card img {
@@ -323,29 +349,32 @@
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
+      gap: 2rem;
     }
 
     .tool {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.6rem;
+      background: rgba(15, 22, 35, 0.42);
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 2rem;
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      transition: 0.25s;
+      gap: 1.2rem;
+      transition: 0.35s cubic-bezier(.2,.8,.2,1);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
     .tool:hover {
-      border-color: rgba(59,130,246,0.4);
-      background: var(--card-hover);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      border-color: rgba(59,130,246,0.35);
+      background: rgba(21, 30, 46, 0.58);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 56px rgba(0,0,0,0.4);
     }
 
     .tool::before {
@@ -413,10 +442,12 @@
       grid-column: 1 / -1;
       flex-direction: row;
       align-items: center;
-      padding: 2rem;
-      gap: 2rem;
-      background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(139,92,246,0.08));
-      border-color: rgba(99,102,241,0.3);
+      padding: 2.4rem;
+      gap: 2.4rem;
+      background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.10));
+      backdrop-filter: blur(20px) saturate(130%);
+      -webkit-backdrop-filter: blur(20px) saturate(130%);
+      border-color: rgba(99,102,241,0.25);
     }
 
     .tool.featured .tool-icon {
@@ -433,16 +464,19 @@
 
     .tool.featured .tool-desc { max-width: 520px; }
 
-    .cta { padding: 4rem 0 5rem; }
+    .cta { padding: 5rem 0 6rem; margin-bottom: 2rem; }
 
     .cta-box {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 3.5rem 2rem;
+      background: rgba(15, 22, 35, 0.42);
+      backdrop-filter: blur(20px) saturate(130%);
+      -webkit-backdrop-filter: blur(20px) saturate(130%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 4rem 2.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 16px 64px rgba(0,0,0,0.25);
     }
 
     .cta-box::before {
@@ -468,12 +502,15 @@
     }
 
     footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3.5rem 0;
       text-align: center;
       position: relative;
       z-index: 1;
-      background: rgba(5, 7, 13, 0.85);
+      background: rgba(5, 7, 13, 0.25);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      margin-top: 4rem;
     }
 
     .footer-logo {
@@ -552,6 +589,8 @@
     </div>
   </header>
 
+  <div class="cube-spacer"></div>
+
   <section id="about">
     <div class="container">
       <div class="section-title">
@@ -577,6 +616,8 @@
       </div>
     </div>
   </section>
+
+  <div class="cube-spacer small"></div>
 
   <section id="tools">
     <div class="container">
@@ -686,6 +727,8 @@
       </div>
     </div>
   </section>
+
+  <div class="cube-spacer"></div>
 
   <section class="cta">
     <div class="container">
