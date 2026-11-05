@@ -24,24 +24,44 @@
 
     body {
       font-family: 'Tajawal', system-ui, sans-serif;
-      background: #05070d url('cube-bg.jpg') center center / cover no-repeat fixed;
+      background-color: #070e1f;
+      background-image: url('cube-bg.jpg');
+      /* مصغرة وتظهر كلياً - ليست مكبرة */
+      background-position: right bottom;
+      background-size: 75% auto;
+      background-repeat: no-repeat;
       background-attachment: fixed;
-
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
       min-height: 100vh;
     }
 
-    /* طبقة خفيفة جداً - تسمح للمكعب بالظهور بوضوح */
+    /* تابلت: أصغر قليلاً */
+    @media (max-width: 1024px) {
+      body {
+        background-size: 90% auto;
+        background-position: center bottom;
+      }
+    }
+
+    /* موبايل: تظهر كاملة مصغرة */
+    @media (max-width: 768px) {
+      body {
+        background-size: 100% auto;
+        background-position: center bottom;
+      }
+    }
+
+    }
+
+    /* طبقة خفيفة جداً - مثل الصورة تماماً */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background: 
-        radial-gradient(ellipse at 30% 20%, rgba(59,130,246,0.08) 0%, transparent 50%),
-        linear-gradient(90deg, rgba(5,7,13,0.35) 0%, rgba(5,7,13,0.15) 50%, rgba(5,7,13,0.25) 100%),
-        linear-gradient(180deg, rgba(5,7,13,0.15) 0%, rgba(5,7,13,0.2) 100%);
+        linear-gradient(180deg, rgba(7,14,31,0.15) 0%, rgba(7,14,31,0.05) 100%);
       z-index: 0;
       pointer-events: none;
     }
@@ -551,7 +571,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="#" class="logo">
-        <img src="1000024221.png" alt="Alislamiah">
+        <img src="Alislamiah-for-Devloppers.png" alt="Alislamiah">
         Alislamiah
       </a>
       <ul class="nav-links">
@@ -578,7 +598,7 @@
 
       <div class="hani-box">
         <div class="hani-icon">
-          <img src="1000024236.png" alt="Hani AI">
+          <img src="Hani-AI.png" alt="Hani AI">
         </div>
         <div class="hani-text">
           <h3>نقدم لك Hani AI</h3>
@@ -599,17 +619,17 @@
       </div>
       <div class="about-grid">
         <div class="about-card">
-          <img src="1000024231.png" alt="">
+          <img src="Outhub.png" alt="">
           <h3>أدوات المطورين</h3>
           <p>مجموعة متكاملة من المنصات المصممة خصيصاً لمساعدة المطورين في بناء مشاريعهم بسرعة وكفاءة.</p>
         </div>
         <div class="about-card">
-          <img src="1000024236.png" alt="">
+          <img src="Hani-AI.png" alt="">
           <h3>ذكاء اصطناعي</h3>
           <p>Hani AI و Gemalot — مساعدان ذكيان يدمجان قوة الذكاء الاصطناعي مع احتياجات المستخدم والمطور.</p>
         </div>
         <div class="about-card">
-          <img src="1000024245.png" alt="">
+          <img src="Alislamiah-search-console.png" alt="">
           <h3>منصات متعددة</h3>
           <p>منصات متنوعة ومترابطة تخدم المطورين والمستخدمين في بيئة واحدة منظمة وسهلة الاستخدام.</p>
         </div>
@@ -630,7 +650,7 @@
 
         <a href="https://l2z.netlify.app" class="tool featured">
           <div class="tool-icon">
-            <img src="1000024236.png" alt="Hani AI">
+            <img src="Hani-AI.png" alt="Hani AI">
           </div>
           <div>
             <div class="tool-name">Hani AI</div>
@@ -643,7 +663,7 @@
         <a href="https://alislamiah.github.io/outhub/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
-              <img src="1000024231.png" alt="Outhub">
+              <img src="Outhub.png" alt="Outhub">
             </div>
             <div>
               <div class="tool-name">Outhub</div>
@@ -657,7 +677,7 @@
         <a href="https://alislamiah.github.io/Outbase/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
-              <img src="1000024575.png" alt="Outbase">
+              <img src="Outbase.png" alt="Outbase">
             </div>
             <div>
               <div class="tool-name">Outbase</div>
@@ -671,7 +691,7 @@
         <a href="https://alislamiah.github.io/Alislamiah-API-studio/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
-              <img src="1000024231.png" alt="API Studio">
+              <img src="Alislamiah-API-studio.png" alt="API Studio">
             </div>
             <div>
               <div class="tool-name">API Studio</div>
@@ -685,7 +705,7 @@
         <a href="https://alislamiah.github.io/Alislamiah-search-console/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
-              <img src="1000024245.png" alt="Search Console">
+              <img src="Alislamiah-search-console.png" alt="Search Console">
             </div>
             <div>
               <div class="tool-name">Search Console</div>
@@ -699,7 +719,7 @@
         <a href="https://nazim10-u.github.io/nazim/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
-              <img src="1000024245.png" alt="مداد">
+              <img src="Midad.png" alt="مداد">
             </div>
             <div>
               <div class="tool-name">مداد</div>
@@ -713,7 +733,7 @@
         <a href="https://alislamiah.github.io/Gemalot/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
-              <img src="1000024236.png" alt="Gemalot">
+              <img src="Gemalot.png" alt="Gemalot">
             </div>
             <div>
               <div class="tool-name">Gemalot</div>
@@ -743,7 +763,7 @@
   <footer>
     <div class="container">
       <div class="footer-logo">
-        <img src="1000024221.png" alt="">
+        <img src="Alislamiah-for-Devloppers.png" alt="">
         Alislamiah For Developers
       </div>
       <p class="footer-text">
