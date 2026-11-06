@@ -755,7 +755,7 @@
       <div class="cta-box">
         <h2>جاهز لتجربة Hani AI؟</h2>
         <p>انتقل مباشرة إلى المنصة واستكشف قدرات الذكاء الاصطناعي ضمن شبكة الإسلامية.</p>
-        <a href="https://l2z.netlify.app" class="btn btn-primary">جرب Hani AI الآن</a>
+        <a href="https://Alislamiah.github.io/Hani-AI/" class="btn btn-primary">جرب Hani AI الآن</a>
       </div>
     </div>
   </section>
