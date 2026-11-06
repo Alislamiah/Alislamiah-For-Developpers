@@ -577,7 +577,7 @@
       <ul class="nav-links">
         <li><a href="#about">عن الشبكة</a></li>
         <li><a href="#tools">الأدوات</a></li>
-        <li><a href="https://l2z.netlify.app" class="nav-cta">Hani AI</a></li>
+        <li><a href="https://Alislamiah.github.io/Hani-AI/" class="nav-cta">Hani AI</a></li>
       </ul>
     </div>
   </nav>
