@@ -592,7 +592,7 @@
         أدوات قوية وذكاء اصطناعي في مكان واحد.
       </p>
       <div class="hero-btns">
-        <a href="https://l2z.netlify.app" class="btn btn-primary">جرب Hani AI</a>
+        <a href="https://Alislamiah.github.io/Hani-AI/" class="btn btn-primary">جرب Hani AI</a>
         <a href="#tools" class="btn btn-outline">استكشف الأدوات</a>
       </div>
 
@@ -648,7 +648,7 @@
 
       <div class="tools-grid">
 
-        <a href="https://l2z.netlify.app" class="tool featured">
+        <a href="https://Alislamiah.github.io/Hani-AI/" class="tool featured">
           <div class="tool-icon">
             <img src="Hani-AI.png" alt="Hani AI">
           </div>
