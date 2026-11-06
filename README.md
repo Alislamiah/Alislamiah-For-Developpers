@@ -603,7 +603,7 @@
         <div class="hani-text">
           <h3>نقدم لك Hani AI</h3>
           <p>مساعدك الذكي داخل شبكة الإسلامية — جربه الآن واكتشف القوة الحقيقية.</p>
-          <a href="https://l2z.netlify.app" class="btn btn-primary">انتقل إلى Hani AI</a>
+          <a href="https://Alislamiah.github.io/Hani-AI/" class="btn btn-primary">انتقل إلى Hani AI</a>
         </div>
       </div>
     </div>
