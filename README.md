@@ -674,6 +674,21 @@
           <div class="tool-action">فتح الأداة ←</div>
         </a>
 
+<a href="https://alislamiah.github.io/MGA-Code-Editor/" class="tool">
+  <div class="tool-top">
+    <div class="tool-icon">
+      <img src="MGA-Code-Editor.png" alt="MGA Code Editor">
+    </div>
+    <div>
+      <div class="tool-name">MGA Code Editor</div>
+      <div class="tool-tag">محرر أكواد</div>
+    </div>
+  </div>
+  <p class="tool-desc">محرر أكواد احترافي من شبكة Alislamiah — لتطوير وتعديل مشاريعك بسهولة.</p>
+  <div class="tool-action">فتح MGA Code ←</div>
+</a>
+
+
         <a href="https://alislamiah.github.io/Outbase/" class="tool">
           <div class="tool-top">
             <div class="tool-icon">
